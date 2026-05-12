@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ArrowRight, ArrowLeft, UploadCloud, FileText, CheckCircle, 
-  Activity, Target, TrendingUp, Microscope, Users, BookOpen, 
-  Mail, Flame, Compass, Zap, Layers, Sparkles, Lock, ArrowUpRight,
-  ChevronRight, Database
+import {
+  ArrowRight, ArrowLeft, UploadCloud, FileText, CheckCircle,
+  Activity, Target, TrendingUp, Microscope, Users, BookOpen,
+  Mail, Flame, Compass, Zap, Layers, Sparkles, ArrowUpRight,
+  Database
 } from 'lucide-react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import './index.css';
@@ -298,8 +298,6 @@ export default function App() {
   const [isStarted, setIsStarted] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
-  const [isUnlocked, setIsUnlocked] = useState(false);
-  const [leadEmail, setLeadEmail] = useState('');
   
   // API Results
   const [calcResults, setCalcResults] = useState(null);
@@ -390,23 +388,6 @@ export default function App() {
     } else if (sectionIndex > 0) {
       setSectionIndex(prev => prev - 1);
       setQuestionIndex(SECTIONS[sectionIndex - 1].questions.length - 1);
-    }
-  };
-
-  const unlockDashboard = async (e) => {
-    e.preventDefault();
-    if (leadEmail.includes('@')) {
-      // Send Lead to Backend
-      try {
-        await fetch('http://localhost:3001/api/leads', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: leadEmail })
-        });
-      } catch (e) {
-        console.error(e);
-      }
-      setIsUnlocked(true);
     }
   };
 
@@ -607,39 +588,6 @@ export default function App() {
                <Activity size={64} color="var(--brand-pastel-dark)" style={{ animation: 'spin 2s linear infinite', margin: '0 auto 2rem auto' }} />
                <h1 className="section-title">Analyzing Your Profile</h1>
                <p className="section-desc">The Axiom proprietary engine is processing your academic narrative securely against 1,000+ elite lab placement data points...</p>
-            </motion.div>
-          ) : !isUnlocked ? (
-            <motion.div 
-              key="lead-gate"
-              className="section-container" 
-              style={{ maxWidth: '600px', marginTop: '50px' }}
-              initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}
-            >
-              <div className="interaction-area" style={{ textAlign: 'center' }}>
-                <div style={{ background: 'var(--bg-pastel)', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px auto', color: 'var(--brand-pastel-dark)' }}>
-                  <Lock size={40} />
-                </div>
-                <h2 className="question-label" style={{ marginBottom: '16px' }}>Your Report is Ready</h2>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '32px', fontSize: '16px' }}>
-                  We have generated your personalized Axiom Readiness Score and Placement Forecast. Enter your email to unlock your dashboard.
-                </p>
-                <form onSubmit={unlockDashboard}>
-                  <input 
-                    type="email" 
-                    required 
-                    placeholder="Enter your email address"
-                    value={leadEmail}
-                    onChange={(e) => setLeadEmail(e.target.value)}
-                    style={{ width: '100%', padding: '16px 24px', borderRadius: '8px', border: '1px solid var(--rule)', fontSize: '16px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}
-                  />
-                  <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                    Unlock My Results <ChevronRight size={18} />
-                  </button>
-                </form>
-                <p style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '24px' }}>
-                  By continuing, you agree to receive strategic placement insights from Axiom Consulting. We will never share your information.
-                </p>
-              </div>
             </motion.div>
           ) : (
             <motion.div 
