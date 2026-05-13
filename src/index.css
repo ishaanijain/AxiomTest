@@ -1,32 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  --bg-base: #0C0C14;
-  --bg-card: #13131F;
-  --bg-elevated: #1A1A2A;
-  --bg-surface: #1E1E2E;
-  --gold: #C9A84C;
-  --gold-light: #DFC07A;
-  --gold-deep: #A88830;
-  --gold-glow: rgba(201, 168, 76, 0.10);
-  --gold-border: rgba(201, 168, 76, 0.22);
-  --text-primary: #EDE8DB;
-  --text-secondary: #888899;
-  --text-muted: #44445A;
-  --rule: rgba(201, 168, 76, 0.14);
-  --rule-solid: #1E1E2E;
-  --bg-white: #13131F;
-  --bg-gray: #1A1A2A;
-  --bg-pastel: rgba(201, 168, 76, 0.08);
-  --brand-pastel: #C9A84C;
-  --brand-pastel-dark: #A88830;
+  --bg-base: #F5F8FF;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #EEF2FF;
+  --bg-surface: #E5EEFF;
+  --gold: #4A7CF0;
+  --gold-light: #7AA3FF;
+  --gold-deep: #2B5CE0;
+  --gold-glow: rgba(74, 124, 240, 0.10);
+  --gold-border: rgba(74, 124, 240, 0.22);
+  --text-primary: #0D1330;
+  --text-secondary: #4A5580;
+  --text-muted: #8892AA;
+  --rule: rgba(74, 124, 240, 0.14);
+  --rule-solid: #DDE4F0;
+  --bg-white: #FFFFFF;
+  --bg-gray: #F0F4FF;
+  --bg-pastel: rgba(74, 124, 240, 0.08);
+  --brand-pastel: #4A7CF0;
+  --brand-pastel-dark: #2B5CE0;
   --font-heading: 'Lora', serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --radius-xl: 24px;
   --radius-lg: 16px;
   --radius-md: 12px;
-  --shadow-soft: 0 10px 40px rgba(0,0,0,0.6);
-  --shadow-hover: 0 20px 40px rgba(201, 168, 76, 0.10);
+  --shadow-soft: 0 10px 40px rgba(74, 124, 240, 0.08);
+  --shadow-hover: 0 20px 40px rgba(74, 124, 240, 0.15);
   --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -39,7 +39,7 @@ body {
   line-height: 1.7;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  background-image: radial-gradient(rgba(201, 168, 76, 0.035) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(74, 124, 240, 0.035) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -51,7 +51,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(12, 12, 20, 0.92);
+  background: rgba(245, 248, 255, 0.92);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--rule);
   padding: 18px 48px;
@@ -112,8 +112,8 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(201, 168, 76, 0.07) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(201, 168, 76, 0.04) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, rgba(74, 124, 240, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(74, 124, 240, 0.04) 0%, transparent 50%);
   z-index: 0;
   pointer-events: none;
 }
@@ -164,7 +164,7 @@ body {
 
 .feature-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(201, 168, 76, 0.4);
+  border-color: rgba(74, 124, 240, 0.4);
   box-shadow: var(--shadow-hover);
 }
 
@@ -266,7 +266,7 @@ body {
 .image-card.selected {
   border-color: var(--gold);
   background: var(--gold-glow);
-  box-shadow: 0 0 0 1px var(--gold), 0 8px 24px rgba(201, 168, 76, 0.12);
+  box-shadow: 0 0 0 1px var(--gold), 0 8px 24px rgba(74, 124, 240, 0.12);
 }
 
 .card-illustration {
@@ -327,7 +327,7 @@ body {
 .btn-primary:hover:not(:disabled) {
   background: var(--gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.28);
+  box-shadow: 0 8px 24px rgba(74, 124, 240, 0.28);
 }
 
 .btn-secondary {
@@ -370,7 +370,7 @@ body {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(201, 168, 76, 0.07) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(74, 124, 240, 0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -381,7 +381,7 @@ body {
   line-height: 1;
   margin: 16px 0;
   color: var(--gold);
-  text-shadow: 0 0 60px rgba(201, 168, 76, 0.3);
+  text-shadow: 0 0 60px rgba(74, 124, 240, 0.3);
   position: relative;
 }
 

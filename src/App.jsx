@@ -4,7 +4,7 @@ import {
   ArrowRight, ArrowLeft, UploadCloud, FileText, CheckCircle,
   Activity, Target, TrendingUp, Microscope, Users, BookOpen,
   Mail, Flame, Compass, Zap, Layers, Sparkles, ArrowUpRight,
-  Database
+  Database, Lock
 } from 'lucide-react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import './index.css';
